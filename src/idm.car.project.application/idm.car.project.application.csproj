@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Product\Queries\**" />
+    <EmbeddedResource Remove="Features\Product\Queries\**" />
+    <None Remove="Features\Product\Queries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Features\Product\Queries\GetProductList\GetProductListQuery.cs" />
+    <Compile Include="Features\Product\Queries\GetProductList\GetProductListQueryHandler.cs" />
+    <Compile Include="Features\Product\Queries\GetProductList\ProductVm.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\idm.car.project.domain\idm.car.project.domain.csproj" />
+  </ItemGroup>
+
+</Project>
